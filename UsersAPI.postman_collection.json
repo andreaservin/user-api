@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "ab66afce-21d3-489e-8c0d-9a6b3cda95b9",
+		"name": "UsersAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users?page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Request to get a paginate list of users by provider a page and size into query params. By default the page = 0 and size = 10."
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						},
+						"description": "Request to get an user by provider an id into url params."
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NzU5NjI5LCJleHAiOjE2ODYzNjQ0Mjl9.kThoXDIu4cwEVjp8UzdumZ8oyt18L7BEmIUDuwViyfY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin 3\",\r\n    \"email\": \"admin2@email.com\",\r\n    \"password\": \"admin2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Request to create a new user by provider the new json data into body and a Bearer token auth type."
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NzU5NjI5LCJleHAiOjE2ODYzNjQ0Mjl9.kThoXDIu4cwEVjp8UzdumZ8oyt18L7BEmIUDuwViyfY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"Admin Edit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							]
+						},
+						"description": "Request to update an exist user by provider an id into url params, the new json data into body and a Bearer token auth type."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NzU5NjI5LCJleHAiOjE2ODYzNjQ0Mjl9.kThoXDIu4cwEVjp8UzdumZ8oyt18L7BEmIUDuwViyfY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							]
+						},
+						"description": "Request to delete an user by provider an id into url params and a Bearer token auth type."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"andrea@email.com\",\r\n    \"password\": \"andrea\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Request to login an user and obtain the token to use into others request to create, update and delete data."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

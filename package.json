@@ -1,0 +1,26 @@
+{
+  "name": "users-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "gendoc": "node swagger.js"
+  },
+  "author": "andreaservin",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "sequelize": "^6.32.0",
+    "sqlite3": "^5.1.6",
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
